@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Be Vietnam', sans-serif;
+    color: black;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 0.5em;
+    color: red;
+    text-decoration: none;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    font-family: 'Bayon', sans-serif;
+    display: inline-block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+.main-nav {
+    top: 147px;
+    position: relative;
+    font-size: 1.05em;
+}
+
+.main-nav li {
+    padding: 0 1%;
+}
+
+.nav a:hover {
+    background-color: red;
+    border-radius: 15%;
+}
+
+.main-header {
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url("Background photo.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-bottom: 150px;
+}
+
+
+.section {
+    background-color: rgb(207, 207, 207);
+}
+
+.main-footer {
+    background-image: url("Background photo 2.png");
+    padding: 0.25em 0;
+}
+
+.main-footer-container {
+    display: flex;
+}
+
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.footer-nav li {
+    padding: 0 0.5em;
+    display: inline;
+}
+
+
+.footer-nav img {
+    width: 20px;
+    height: 20px;
+}
+
