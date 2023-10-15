@@ -1,0 +1,33 @@
+name: HTML and CSS Validation
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies (HTML validation)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y w3c-markup-validator
+      shell: bash
+
+    - name: Validate HTML
+      run: |
+        find . -name "*.html" -exec bash -c 'tidy -q -e {}' \;
+      shell: bash
+
+    - name: Install dependencies (CSS validation)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y css-validator
+      shell: bash
+
+    - name: Validate CSS
+      run: |
+        find . -name "*.css" -exec bash -c 'cssvalidate -e {}' \;
+      shell: bash
