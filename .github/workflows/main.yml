@@ -1,0 +1,26 @@
+name: HTML and CSS Validation
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Validate HTML
+      run: |
+        find . -name "*.html" -exec tidy -q -e {} \;
+      shell: bash
+
+    - name: Validate CSS
+      run: |
+        find . -name "*.css" -exec curl -F "file=@{}" https://jigsaw.w3.org/css-validator/validator \
+        -F "output=json" \
+        -F "warning=0" \
+        -F "profile=css3" \
+        -F "usermedium=all" \
+        -F "lang=en" \;
+      shell: bash
